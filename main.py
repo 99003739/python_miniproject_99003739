@@ -8,7 +8,8 @@ def keyword_search(word, file_text):
     file_name=str(word)+extension
     file_creation = open(file_name, "w+")
     file_creation.write("The number of occurrences of keyword is:"+str(count))
-    match = re.findall(word, file_text)
+    match = re.findall(word, file_text, re.M | re.I)
+    print(len(match))
     print(match)
 
     return count
