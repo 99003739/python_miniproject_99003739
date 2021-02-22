@@ -3,7 +3,7 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import re
 def keyword_search(word, file_text):
-    count = file_text.count(word)
+    count =file_text.count(word)
     extension=".txt"
     file_name=str(word)+extension
     file_creation = open(file_name, "w+")
@@ -18,15 +18,14 @@ def keyword_search(word, file_text):
 
 
 if __name__ == '__main__':
-    '''
-    with open('readme.txt') as f:
-        read_file = f.read()
-        print(read_file)'''
 
-    demo_string="I am the King. King is me."
+    with open('input_file.txt') as input_file:
+        read_file = input_file.read()
+        print(read_file)
+
     keyword=input("Enter the keyword you wanted to search in file:")
-    count=keyword_search(keyword,demo_string)
-    print(count)
+    keyword_search(keyword, read_file)
+
 
 
 
