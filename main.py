@@ -2,21 +2,25 @@
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import re
-def keyword_search (word, file_text) :
-    #count = file_text.count(word)
-    match = re.findall(word, file_text, re.M | re.I)
+
+
+def keyword_search(keyword_given, file_text):
+    counting = 0
+    match = re.findall(keyword_given, file_text, re.M | re.I)
     extension = ".txt"
-    file_name = str(word)+extension
+    file_name = str(keyword_given)+extension
     file_creation = open(file_name, "w+")
     file_creation.write("The number of occurrences of keyword is:" + str(len(match)))
-    #match = re.findall(word, file_text, re.M | re.I)
-    print(len(match))
-    print(match)
+    file_creation.write(str("\n"))
+    split_file_text = file_text.split()
 
-    return 0
-
-
-
+    f = open(file_name, "a+")
+    for iteration in range(len(split_file_text)):
+        matching = re.match(keyword_given, split_file_text[iteration], re.M | re.I)
+        if matching:
+            counting += 1
+            y = (split_file_text[iteration-1]+" "+split_file_text[iteration]+" "+split_file_text[iteration+1]+"\n")
+            f.writelines(str(y))
 
 
 if __name__ == '__main__':
@@ -24,17 +28,6 @@ if __name__ == '__main__':
     with open('input_file.txt') as input_file:
         read_file = input_file.read()
         print(read_file)
-
-    keyword = input("Enter the keyword you wanted to search in file:")
-    keyword_search(keyword, read_file)
-
-
-
-
-
-''' import re
-
-    with open('inpu.txt') as searchfile:
-        text = searchfile.read()
-        for m in re.finditer('(?:^|\s+\S+) software?(?:\s*\s+\S+|$)', text,  re.IGNORECASE):
-            print(m)'''
+    for x in range(5):
+        keyword = input("Enter the keyword you wanted to search in file:")
+        keyword_search(keyword, read_file)
