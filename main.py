@@ -13,7 +13,6 @@ def keyword_search(keyword_given, file_text):
     file_creation.write("The number of occurrences of keyword is:" + str(len(match)))
     file_creation.write(str("\n"))
     split_file_text = file_text.split()
-
     f = open(file_name, "a+")
     for iteration in range(len(split_file_text)):
         matching = re.match(keyword_given, split_file_text[iteration], re.M | re.I)
