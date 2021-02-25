@@ -26,7 +26,7 @@ class SearchWord:
         self.file_text = file_text
 
     # Keyword_Search method defined
-    def keyword_search(self,):
+    def keyword_search(self):
 
         match = re.findall(self.keyword_given, self.file_text, re.M | re.I)
         # Finding the keyword in the  input file
