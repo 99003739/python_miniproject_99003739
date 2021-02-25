@@ -56,9 +56,9 @@ class SearchWord:
 if __name__ == '__main__':
 
     with open('input_file.txt') as input_file:  # opening the input_file.txt
-        read_file = input_file.read()  # giving file handler to the file
+        reading_file = input_file.read()  # giving file handler to the file
     for x in range(5):
         keyword = input("Enter the keyword you wanted to search in file:")
         # asking user to enter keyword to search
-        d = SearchWord(keyword, read_file)
-        d.keyword_search()
+        ob = SearchWord(keyword, reading_file)
+        ob.keyword_search()
