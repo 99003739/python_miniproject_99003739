@@ -6,10 +6,12 @@ Mail- prateek.chauhan@ltts.com
 Program Steps:
 1. The program is reading the input file.
 2. user will be asked for the keyword, user wants bto search.
-3. The keyword will be searched then a file will be created with the name of the keyword.
-4. The newly created file will have the count of number of times keyword appeared and the
-   lines with previous word and the next word with the keyword.
-5. The process will be repeated 5 times and the user will obtain 5 files at the end of program.
+3. The keyword will be searched then a file will be created
+   with the name of the keyword.
+4. The newly created file will have the count of number of times keyword
+   appeared and the lines with previous word and the next word with the keyword
+5. The process will be repeated 5 times and the user will obtain 5 files at the
+   end of program.
 """
 import re
 # regular expression imported
@@ -31,7 +33,7 @@ class SearchWord:
         extension = ".txt"
         file_name = str(self.keyword_given)+extension
         # .txt extension added to file name
-        file_creation = open(file_name, "w+")  # .txt file created in writing mode
+        file_creation = open(file_name, "w+")  # file created in writing mode
         file_creation.write("The number of occurrences of keyword is:" + str(len(match)))
         # writing count to file
         file_creation.write(str("\n\n"))
