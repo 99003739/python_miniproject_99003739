@@ -51,6 +51,7 @@ class SearchWord:
                 three_word = (split_file_text[cycle-1]+" "+split_file_text[cycle]+" "+split_file_text[cycle+1]+"\n")
                 file_append.writelines(str(three_word))
                 # appending the file with tuple generated
+        file_creation.close()
 
 
 if __name__ == '__main__':
